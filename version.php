@@ -18,26 +18,14 @@
  * CMDA Theme
  *
  * @package    theme_cmda
- * @copyright  2017 Justus Sturkenboom
+ * @copyright  2017 David de Vries, Justus Sturkenboom
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
-
-// This is the version of the plugin.
 $plugin->version = '2017112300';
-
-// This is the version of Moodle this plugin requires.
-$plugin->requires = '2016070700';
-
-// This is the component name of the plugin - it always starts with 'theme_'
-// for themes and should be the same as the name of the folder.
+$plugin->requires = '2016070700'; // Moodle ver.
 $plugin->component = 'theme_cmda';
-
-// This is a list of plugins, this plugin depends on (and their versions).
 $plugin->dependencies = [
     'theme_boost' => '2016102100'
 ];
-
-?>
