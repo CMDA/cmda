@@ -14,18 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * CMDA Theme
- *
- * @package    theme_cmda
- * @copyright  2017 David de Vries, Justus Sturkenboom
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 
-defined('MOODLE_INTERNAL') || die();
-$plugin->version = '2017112300';  // Theme version
-$plugin->requires = '2016070700'; // Moodle version
-$plugin->component = 'theme_cmda';// Component name
-$plugin->dependencies = [
-    'theme_boost' => '2016102100'
-];
+// Too tricky for now, might dive into renderers later..
+// class theme_cmda_core_renderer extends core_renderer {
+//
+// }
+
+?>

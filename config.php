@@ -25,16 +25,24 @@
 defined('MOODLE_INTERNAL') || die();
 
 $THEME->doctype = 'html5';
-$THEME->yuicssmodules = array();
 $THEME->name = 'cmda';
-$THEME->parents = ['bootstrapbase']; // other option: boost
 $THEME->sheets = []; // no static stylesheets, SCSS
-$THEME->enable_dock = false;
 $THEME->editor_sheets = [];
+$THEME->parents = ['boost']; // options: boost, clean
+$THEME->enable_dock = false;
+$THEME->yuicssmodules = array(); // deprecated, don't touch
 
 // override the theme renderer
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-//$THEME->requiredblocks = ''; // can we add the menu to all pages?
+$THEME->requiredblocks = ''; // can we add the menu to all pages?
 
-// forces a block region into the page when editing is enabled and it takes up too much room.
-// $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+// forces a block region into the page when editing is enabled and
+// it takes up too much room.
+$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+
+// This is the function that returns the SCSS source for the main file in our
+// theme. We override the boost version because we want to allow presets
+// uploaded to our own theme file area to be selected in the preset list.
+$THEME->scss = function($theme) {
+    return theme_cmda_get_main_scss_content($theme);
+};
